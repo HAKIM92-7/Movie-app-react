@@ -43,7 +43,7 @@ return(
   
   <div id="search" >
   
-  <Rater ratingValue={ratingValue} /> 
+  <Rater id= "rater" ratingValue={ratingValue} /> 
   <form className="form-inline"  onSubmit={e=>{
 
 
@@ -70,16 +70,16 @@ e=> setFilter(e.target.value)
         <img src={el.image} class="card-img-top" alt="image non loaded"/>
         <div className="card-body">
             <p className="card-text">{el.story}</p>
-            <p > {[...Array(5)].map((star,i)=>{
+            <p > {[...Array(6)].map((star,i)=>{
         
-        var ratingValue=i+1;
+        var ratingValue=i;
         
         
         return <label>
             
             <input type="radio" name="rating" value={ratingValue}/><br/><br/>
             
-            <FaStar className="star" size={30}   color={ratingValue<=el.rating ?'yellow':'black' }
+            <FaStar className="star" size={30} style={ratingValue===0?{opacity:'0%'}:""}   color={ratingValue<=el.rating && ratingValue!==0 ?'yellow':'black' }
             
             />
             </label>;

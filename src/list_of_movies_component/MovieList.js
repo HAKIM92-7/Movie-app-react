@@ -10,7 +10,24 @@ import Rater from '../Rating/Rater';
 export default()=>{
 
 
-const [list,setList]=useState([]);
+const [list,setList]=useState([{name:"We're the millers" ,story:"sorry no story!!",rating:4,
+image:'https://m.media-amazon.com/images/M/MV5BMjA5Njc0NDUxNV5BMl5BanBnXkFtZTcwMjYzNzU1OQ@@._V1_.jpg'},
+{name:"Last Man in earth" ,story:"no story too!!",rating:4,
+image:'https://images-na.ssl-images-amazon.com/images/I/91Qa6FY7CjL._AC_SY550_.jpg'
+
+},
+{
+    name:"GOT" ,story:"best story ever!!",rating:5,
+    image:'https://m.media-amazon.com/images/M/MV5BYTRiNDQwYzAtMzVlZS00NTI5LWJjYjUtMzkwNTUzMWMxZTllXkEyXkFqcGdeQXVyNDIzMzcwNjc@._V1_.jpg'},
+
+    {
+        name:"Lembi" ,story:"no word to say !!",rating:3,
+        image:'https://images-na.ssl-images-amazon.com/images/I/41G9KOJiGqL.jpg'},
+        {
+            name:"Katkout" ,story:"null!!",rating:0,
+            image:'https://m.media-amazon.com/images/M/MV5BZTQ3Mjk3ZjItZGFiYy00MzE0LTlmMjQtYzQ4YzQzNDhhYTkwXkEyXkFqcGdeQXVyNjU0NTU1NjU@._V1_.jpg'}
+
+]);
 const [modalIsOpen,setIsOpen]=useState(false) ;   
 const [movie,setMovie]=useState({});
 
@@ -109,7 +126,7 @@ setMovie({ ...movie, story:e.target.value})
 
 <br/><br/>
 
-<label Forhtml="image_url">Image du film</label> <input type='text'  name="image_url" onChange={e=>{
+<label htmlFor="image_url">Image du film</label> <input type='text'  name="image_url" onChange={e=>{
 
 
 setMovie({ ...movie, image:e.target.value})

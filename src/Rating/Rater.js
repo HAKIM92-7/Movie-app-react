@@ -35,9 +35,9 @@ return (
 <div>
     
     
-{[...Array(5)].map((star,i)=>{
+{[...Array(6)].map((star,i)=>{
 
-var ratingValue=i+1;
+var ratingValue=i;
 
 
 return <label key={i}>
@@ -51,7 +51,8 @@ return <label key={i}>
     
     }}  />
     
-    <FaStar className="star" size={30}  color={ratingValue<=(this.state.hover||this.state.rating)?'yellow':'black' }
+    <FaStar className="star" size={30}  style={ratingValue===0?{color:'red'}:""} color={ratingValue<=(this.state.hover||this.state.rating)&&
+    ratingValue!==0?'yellow':'black' }
     onMouseEnter={()=>this.setState({hover: ratingValue})}
     onMouseLeave={()=>this.setState({hover: null})}
     
