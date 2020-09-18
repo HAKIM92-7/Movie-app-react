@@ -10,9 +10,12 @@ import Rater from '../Rating/Rater';
 export default()=>{
 
 
-const [list,setList]=useState([{name:"We're the millers" ,story:"sorry no story!!",rating:4,
+const [list,setList]=useState([
+
+
+{name:"We're the millers" ,story:"sorry no story!!",rating:4,
 image:'https://m.media-amazon.com/images/M/MV5BMjA5Njc0NDUxNV5BMl5BanBnXkFtZTcwMjYzNzU1OQ@@._V1_.jpg'},
-{name:"Last Man in earth" ,story:"no story too!!",rating:4,
+{name:"Last Man on earth" ,story:"no story too!!",rating:4,
 image:'https://images-na.ssl-images-amazon.com/images/I/91Qa6FY7CjL._AC_SY550_.jpg'
 
 },

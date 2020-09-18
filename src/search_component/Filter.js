@@ -29,9 +29,9 @@ const ratingValue=(value)=>{
 
 const filtredList=props.list.filter(movie=>{
     
-   
     
-    return  movie.name.toLowerCase().indexOf(filter.toLowerCase())   !==-1  && movie.rating===stars });
+    
+    return stars!=="" ? movie.name.toLowerCase().indexOf(filter.toLowerCase()) !==-1  && movie.rating===stars :movie});
 
 
 return(
@@ -39,12 +39,12 @@ return(
 <>
 
 <nav className="navbar navbar-dark bg-dark" style={{height:'180px',marginBottom:'30px'}}>
-  <a className="navbar-brand">My Best Movies</a>
-  
-  <div id="search" >
-  
-  <Rater id= "rater" ratingValue={ratingValue} /> 
-  <form className="form-inline"  onSubmit={e=>{
+<a className="navbar-brand">My Best Movies</a>
+
+<div id="search" >
+
+<Rater id= "rater" ratingValue={ratingValue} /> 
+<form className="form-inline"  onSubmit={e=>{
 
 
 e.preventDefault();
@@ -52,13 +52,14 @@ e.preventDefault();
 console.log(filter);
 
 }}>
- <input className="form-control mr-sm-2" type="search" placeholder="Search"  aria-label="Search" onChange={
+
+<input className="form-control mr-sm-2" type="search" placeholder="Search"  aria-label="Search" onChange={
 e=> setFilter(e.target.value)
 
 
 }/> 
     <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-  </form></div>
+</form></div>
 </nav>
 
 <div id="movieList">
